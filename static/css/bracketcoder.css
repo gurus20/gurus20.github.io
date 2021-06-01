@@ -1,0 +1,145 @@
+/* home.html */
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+@font-face {
+    font-family: nunito;
+    src: url(../fonts/Nunito/Nunito-SemiBold.ttf);
+}
+
+* {
+    font-family: nunito;
+    letter-spacing: 1;
+}
+
+/* header */
+
+.logohead {
+    min-height: 120px;
+}
+
+.logohead .logo {
+    left: 30px;
+    top: 30px;
+    position: absolute;
+}
+
+.logohead .logo {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+.navbar .top-nav {
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+nav {
+    background: transparent;
+    min-height: 50px;
+}
+
+.navbar-toggler {
+    outline: none;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-flex;
+    padding: 0 10px;
+}
+
+.nav-links ul li a {
+    font-size: medium;
+    text-decoration: none;
+    color: white;
+    /* color: #2d6063; */
+    font-family: nunito;
+    letter-spacing: 1px;
+}
+
+.banner-top{
+    height: 60vh;
+    margin: 10px !important;
+    border-radius: 15px;
+    background-image: url(https://images.pexels.com/photos/1054201/pexels-photo-1054201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-top .banner-intro{
+    /* background: rgba(255, 255, 255, 0.295); */
+    margin: auto;
+    padding: 30px;
+}
+
+@media screen and (max-width:300px){
+    .b-intro-text{
+        width: 100%;
+    }
+    .b-intro-text p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:480px){
+    .b-intro-text{
+        width: 75%;
+    }
+
+     .b-intro-text p{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:576px){
+
+}
+
+@media screen and (max-width:768px){
+
+}
+
+@media (max-width: 992px) { 
+
+}
+
+.banner-top .banner-intro .b-intro-text{
+    border-bottom: 2px solid white ;
+    width: 50%;
+    margin: auto;
+}
+
+.banner-top .banner-intro p{
+color: white;
+text-align: center;
+font-size: 40px;
+}
+
+.banner-top .banner-intro .b-intro-link{
+    position: absolute;
+    left: 50%;
+    transform:  translateX(-50%);
+    margin-top: 35px;
+}
+
+.banner-top .banner-intro .b-intro-link a{
+    text-decoration: none;
+    padding: 10px 20px;
+    background: slategrey;
+    color: white;
+    font-size: 18px;
+    border-radius: 100px;
+    border: 2px solid white;
+    opacity: .9;
+}
+
+.banner-top .banner-intro .b-intro-link a:hover{
+    opacity: 1;
+}

@@ -1,0 +1,59 @@
+/* base.html */
+
+/* logo-head */
+
+.logohead{
+    min-height: 120px;
+}
+.logohead .logo img{
+    width: 140px;
+    height: auto;
+
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+
+/* nav */
+nav{
+    background: #007a79;
+    min-height: 70px;
+    box-shadow: 0 0 10px 0 gray;
+}
+
+.top-nav{
+    justify-content: center;
+    padding-right: 30px;    
+}
+
+.navbar-toggler{
+    outline: none;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-flex;
+    padding: 0 10px;
+    transform: translateY(10px);
+}
+
+.nav-links ul li a{
+    font-size: medium;
+    text-decoration: none;
+    color: white;
+    font-family: nunito;
+    letter-spacing: 1px;
+}
+
+.footer{
+    background-color: #007a79;
+    height: 400px;
+}
+
+.footer p{
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    padding: 40px;
+}
