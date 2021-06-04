@@ -33,7 +33,7 @@
 .logohead .logo {
     text-decoration: none;
     font-size: 20px;
-    color: gray;
+    color: #4f5963;
     background: white;
     padding: 2px 5px;
 }
@@ -94,8 +94,8 @@ nav {
 
 .banner-top .banner-intro-1 .b-intro-link a{
     text-decoration: none;
-    padding: 10px 15px;
-    background: #4c64ff;
+    padding: 10px 25px;
+    background: #325288;
     color: white;
     font-size: 18px;
     border-radius: 100px;
@@ -123,19 +123,20 @@ nav {
     padding: 10px 15px;
     border-radius: 100px;
     border: 2px solid white;
-    background-color: gray;
+    background-color: #4f5963;
     font-size: 17px;
 }
 /* ------------------------------------------------------- */
-
+/* ---- webtools--- */
 .wt-heading p{
     font-size: calc(1.5rem + 1.0vw);
-    color: gray;
+    color: #4f5963;
     font-weight: 900;
 }
 
 .wt-heading{
     margin: 20px;
+    text-align: center;
 }
 
 .tool-right{
@@ -152,37 +153,127 @@ nav {
     border-radius: 20px;
 }
 
-.tool-right .tool-ln a{
+.tool-right a{
     text-decoration: none;
-    color: gray;
+    color: #4f5963;
     opacity: .9;
 }
 
-.tool-right .tool-ln a:hover{
+.tool-right a:hover{
     opacity: 1;
+    color: #325288;
 }
 
-.tool-right .tool-ln a > i{
+.tool-right a .tool-ln > i{
     font-size: 35px;
     margin: 10px;
 }
 
-.about-area {
-    padding: 20px;
+/* --- about area ---- */
+.about-area{
+    overflow: hidden;
+    background: #f5f5fa;
 }
 
-.about-right, .about-left{
-    padding: 20px;
-}
 
-.about-right p{
-    font-size: 18px;
+.about-area .about-left {
+    padding: 30px;
     text-align: center;
 }
 
-.about-area h4{
-    color: gray;
+.about-left p{
+    line-height: 30px;
+    font-size: 18px;
+    color: #4f5963;
+    letter-spacing: 1px;
 }
+
+.about-area h4{
+    color: #325288;
+}
+
+.h-l{
+    width: 50%;
+    margin: auto;
+}
+
+.h-l hr{
+    color: #325288;
+    font-size: 10px;
+}
+
+.about-area .ab-card{
+    background: #325288;
+    margin: 10px auto;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 400px;
+    opacity: .9;
+}
+
+.quick-card a{
+    text-decoration: none;
+    color: #f5f5fa;
+    font-size: 18px;
+}
+
+.quick-card a:hover, .about-area .ab-card{
+    color: white;
+    opacity: 1;
+}
+
+/* -------------------- Blog area ------------------ */
+
+.blog-box a{
+    text-decoration: none;
+}
+
+.blog-area{
+    overflow: hidden;
+}
+
+.blog-card{
+    background: #f5f5fa;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.blog-card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.blog-card .post-heading{
+    font-size: 20px;
+    color: #325288;
+    font-weight: 900;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.blog-card .post-brief{
+    color: #4f5963;
+    padding: 0 10px;
+}
+
+.blog-card .read-more{
+    background: #325288;
+    color: #f5f5fa;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.blog-card .read-more p{
+    margin: 0;
+}
+
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
 /* responsive */
 @media screen and (min-width:300px){
     .b-intro-text{
@@ -214,12 +305,12 @@ nav {
     }
 }
 
-.footer{
-    text-align: center;
-    font-size: calc(2.0rem + 1.5vw);
+.footer{    
+    overflow: hidden;
     min-height: 400px;
+    background: #325288;
+    border-radius: 15px;
+    margin: 10px !important;
     color: white;
-
-    background: #4c64ff;
-    border-radius: 15px 15px 0 0 ;
+    
 }
