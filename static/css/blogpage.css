@@ -1,0 +1,171 @@
+.blogpage {
+    min-height: 40vw;
+}
+
+.post-col {
+    min-height: 40vw;
+    min-width: 70%;
+    background: #f5f5fa;
+}
+
+.side-col {
+    min-height: 40vw;
+    min-width: 30%;
+}
+
+.sidebar {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+}
+
+.side-search{
+    max-width:250px;
+}
+
+.category-widget {
+    max-width: 250px;
+    margin: 20px 0;
+    background: #f5f5fa;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cat-heading {
+    color: #325288;
+    padding: 0px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+.cat-heading h4{
+    margin: 0;
+}
+
+.cat-heading hr{
+    width: 60%;
+    margin: 16px auto;
+}
+
+.cat-list {
+    text-align: center;
+    margin: 8px;
+    padding: 0 10px;
+}
+
+.cat-list a {
+    text-decoration: none;
+    color: #325288;
+}
+
+.hr-80 hr {
+    width: 60%;
+    margin: 5px auto;
+    color: #325288;
+}
+
+.post-heading{
+    margin-top: 20px;
+    text-align: center;
+    color: #325288;
+}
+
+.time-author{
+    text-align: center;
+    color: #63718a;
+}
+
+
+.post-body {
+    padding: 10px 10%;
+}
+
+.post-img{
+    margin: 5px;
+}
+
+.post-img img{
+    width: 100%;
+    min-height: auto;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.post-text{
+    padding: 15px 10px;
+    letter-spacing: 1px;
+    text-align: justify 
+}
+
+.related-post-widget {
+    display: none;
+    max-width: 250px;
+    margin: 20px 0;
+    background: #f5f5fa;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.rel-img-heading{
+    display: inline-flex;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.rel-heading{
+    margin: 2px 0px;
+    line-height: 18px;
+    padding-right: 8px;
+}
+
+.rel-heading p{
+    margin: 0;
+}
+.related-post-widget a{
+    text-decoration: none;
+    color: #325288;
+}
+
+.rel-body{
+    margin: 8px;
+}
+
+.post-list img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: auto 8px;
+}
+
+
+/* responsive */
+@media screen and (min-width:300px){
+    
+}
+
+@media screen and (min-width:480px){
+    
+}
+
+@media screen and (min-width:576px){
+    
+}
+
+@media screen and (min-width:768px){
+    .cat-list{
+        text-align: left;
+    }
+    .cat-heading{
+        text-align: left;
+    }
+    .cat-heading hr{
+        margin: 16px 0;
+    }
+}
+
+@media (min-width: 992px) { 
+    
+}
