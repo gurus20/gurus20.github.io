@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrap {
+    width: 100%;
+    min-height: 90vh;
+    background: url("https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f1f1f1;
+}
+
+header {
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: .4s;
+    background-color: #02475E;
+}
+
+.logo {
+    font-size: large;
+    font-weight: 700;
+    color: orange;
+    margin-left: 10px;
+}
+
+.nav-links, .social-links{
+    display: none;
+}
+
+.nav-links ul, .social-links ul {
+    display: flex;
+}
+
+.nav-links ul li {
+    list-style: none;
+    padding: 0 10px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 4px;
+}
+
+.social-links{
+    margin-right: 10px;
+}
+
+.social-links ul li {
+    list-style: none;
+    padding: 0 10px;
+}
+
+.social-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.ham-menu{
+    display: flex;
+}
+
+.ham-menu i{
+    color: white;
+    font-size: 18px;
+}
+
+.menu-open{
+    display: none;
+    background: #02475E;
+    padding: 10px 20px;
+    height: 200px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top:70px
+}
+
+.social-links-2 ul{
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav-links-2 ul li {
+    margin-bottom: 15px;
+    list-style: none;
+    color: white;
+    text-align: center;
+}
+
+.social-links-2 ul li{
+    margin: 15px;
+    list-style: none;
+    color: white;
+    text-align: center;
+}
+
+.nav-links-2 ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.social-links-2 ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.intro{
+    padding: 100px 20px 10px;
+    text-align: center;
+}
+
+.intro .caption h1{
+    color: white;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.caption p{
+    color: white;
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.intro-link{
+    margin: 40px 0;
+}
+
+.intro-link a{
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    background-color: orange;
+}
+
+/* latest projects*/
+
+
+.sec-heading{
+    text-align: center;
+    margin: 40px;
+}
+
+.sec-heading p:nth-child(1){
+    font-size: 18px;
+    color: orange;
+}
+
+.sec-heading p:nth-child(2){
+    font-size: 42px;
+    color: #02475E;
+    font-weight: 900;
+    margin: 10px 0 15px;
+}
+.sec-heading p:nth-child(3){
+    font-size: 16px;
+    color: gray;
+}
+
+.hr1{
+    margin: 20px auto;
+    width: 80px;
+    border: 3px solid orange;
+}
+
+.project-box{
+    background-color: #f1f1f1;
+    padding: 20px 0;
+}
+
+.project-row{
+    display: grid;
+}
+
+.img-side{
+    padding: 10px 30px;
+    animation: anim 2s forwards;
+}
+
+.img-side img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.info-side{
+    padding: 10px 30px;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.info-side h1{
+    margin-bottom: 20px;
+}
+
+.info-side p{
+    color: gray;
+    margin-bottom: 25px;
+}
+
+.info-side a{
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: #02475E;
+    border-radius: 100px;
+    color: white;
+    font-size: 16px;
+}
+
+.about-box{
+    min-height: 400px;
+}
+
+.about-left{
+    text-align: center;
+    line-height: 24px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.about-left i{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.about-right{
+    width: 100%;
+    background: #f1f1f1;
+    border-radius: 0 20px 20px 0 ;
+}
+
+.about-text{
+    text-align: justify;
+    line-height: 22px;
+    padding: 30px;
+}
+
+.about-text h1{
+    margin-bottom: 20px;
+}
+
+.about-text a{
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: #02475E;
+    border-radius: 100px;
+    color: white;
+    font-size: 16px;
+}
+
+.about-text p{
+    margin-bottom: 25px;
+}
+
+.contact-box{
+    min-height: 250px;
+    background: #02475E;
+    text-align: center;
+}
+
+.contact-btn{
+    padding: 40px 0;
+}
+
+.contact-box .contact-btn a{
+    color: orange;
+    background-color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.contact-info{
+    text-align: center;
+    color: white;
+    line-height: 24px;
+}
+
+.hr2{
+    margin: 20px auto;
+    width: 200px;
+    border: 2px solid orange;
+}
+
+@media screen and (min-width:300px) {
+    
+}
+
+@media screen and (min-width:480px) {
+
+}
+
+@media screen and (min-width:576px) {
+    .ham-menu{
+        display: none;
+    }
+
+    .nav-links, .social-links{
+        display: flex;
+    }
+
+    header{
+        background-color: transparent;
+        padding: 30px 20px;
+    }
+
+    .intro .caption h1{
+        font-size: 50px;
+    }
+    .img-side img{
+        height: 350px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .project-row{
+        display: flex;
+    }
+
+    .reverse-flow{
+        flex-direction: row-reverse;
+    }
+
+    .info-side{
+        padding: 100px 40px;
+    }
+
+    .project-box{
+        padding: 20px;
+    }
+
+    .about-left{
+        padding-top: 100px;
+    }
+
+    .about-text{
+        padding: 100px 40px;
+    }
+
+    header{
+        padding: 30px 50px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+.nav-links li a:hover{
+    color: orange;
+    border-bottom: 2px solid orange;
+}
