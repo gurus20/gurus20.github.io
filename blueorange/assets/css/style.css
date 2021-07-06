@@ -4,6 +4,7 @@
     box-sizing: border-box;
     letter-spacing: 1px;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 
@@ -342,6 +343,7 @@ header {
 
 }
 
+/* for header in small screen handle carefully */
 @media screen and (max-width:575px) {
     header{
         background-color: #02475E !important;
@@ -419,3 +421,4 @@ header {
     color: orange;
     border-bottom: 2px solid orange;
 }
+
