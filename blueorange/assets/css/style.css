@@ -345,7 +345,12 @@ header {
 @media screen and (max-width:575px) {
     header{
         background-color: #02475E !important;
-        position: fixed !important;
+        position: relative !important;
+    }
+
+    .menu-open{
+        position: relative;
+        top: 0;
     }
 }
 
