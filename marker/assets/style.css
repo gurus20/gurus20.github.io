@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14.5px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: .5px;
+}
+
+.b-green {
+    background: #42b175;
+    color: white;
+}
+
+.c-green {
+    color: #59CE8F;
+}
+
+.rounded-10 {
+    border-radius: 20px;
+}
+
+.social-media .social-icon {
+    border: 1px solid #59CE8F;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #59CE8F;
+}
+
+#login-form{
+    min-height: 450px;
+}
+
+
+.home-hero h1{
+    /* text-shadow: -3px -2px 0px rgb(226, 226, 226); */
+    border-bottom: 4px solid rgb(214, 214, 214);
+    width: fit-content;
+}
+
+.form-float .float-wrap input {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.form-float .float-wrap input {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    border: 2px solid #999;
+}
+
+.form-float .float-wrap {
+    position: relative;
+}
+
+.form-float .float-wrap label {
+    font-style: italic;
+    font-size: 13px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #999;
+    transition: 0.5s;
+    pointer-events: none;
+    background: white;
+}
+
+.form-float input:focus~label,
+.form-float input:valid~label {
+    top: -7px;
+    left: 10px;
+    color: #42b175;
+}
