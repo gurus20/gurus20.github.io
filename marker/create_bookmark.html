@@ -51,69 +51,126 @@
         </div>
     </header>
 
-    <div class="container mt-5">
+    <div class="container-fluid">
 
-        <div class="row">
-            <div class="col-12 col-md-6">
+        <div class="row" style="height: calc(100vh -  61px);">
+            <div class="col-12 col-md-6 p-md-5 p-2">
                 <p class="display-6 fw-bold pb-3 c-dark">Paste your Link & Add Tag, Thats all</p>
 
                 <form id="create_bookmark_form" action="" class="form-float">
                     <div class="float-wrap">
+                        <!-- this input for links -->
                         <input type="url" id="link" name="link" required>
                         <label>&nbsp;Enter your Link or Url&nbsp;</label>
                     </div>
-        
+
                     <div class="float-wrap">
-                        <input list="tags_list" name="tags_list" id="tag_inp" name="tag_inp" required multiple class="mb-3">
-                        <datalist id="tags_list">
+                        <!-- this input only for UI handling -->
+                        <input type="text" list="tag_inp" name="tag_inp" id="tag_inp" name="tag_inp" required
+                            class="mb-3">
+                        <datalist id="tag_inp">
                             <option value="Django"></option>
                             <option value="Python"></option>
                             <option value="Ruby"></option>
                         </datalist>
                         <label>&nbsp;Enter Tag&nbsp;</label>
                     </div>
-                    <!-- <input type="hidden"> -->
-                    <div id="taglist_box" class="taglist row justify-content-start rounded-3 border d-none p-2 m-0 mb-3">
-                        
+
+                    <!-- this input for tags_list -->
+                    <input type="hidden" value="" id="tags_list">
+
+                    <div id="taglist_box"
+                        class="taglist row justify-content-start rounded-3 border d-none p-2 m-0 mb-3">
+
                     </div>
-                    <input type="submit" value="Sign Up" class="btn b-green w-100 py-2"> <br> <br>
-                    
+                    <input type="submit" value="Create Mark" class="btn b-green w-100 py-2"> <br> <br>
+
                 </form>
             </div>
-            <div class="col-12 col-md-6">
-                
+            <div class="col-12 col-md-6 p-md-5 p-2 b-dark">
+                <p class="h3 fw-bold pb-3 fst-italic bor-bottom mb-4">My Marks</p>
+
+                <ol>
+                    <li class="mb-3">
+                        <a class="text-light" href="#">Why javasript is Superior.</a><br>
+                        <div id="taglist_box" class="taglist row justify-content-start p-2 m-0 mb-3">
+                            <p class="tag m-2" style="cursor: pointer;">Javscript<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                            <p class="tag m-2" style="cursor: pointer;">Jquery<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light" href="#">Never Underestimate the power of IronMan.</a> <br>
+                        <div id="taglist_box" class="taglist row justify-content-start p-2 m-0 mb-3">
+                            <p class="tag m-2" style="cursor: pointer;">IronMan<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                            <p class="tag m-2" style="cursor: pointer;">TonyStark<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                            <p class="tag m-2" style="cursor: pointer;">Avengers<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                        </div>
+                    </li>
+                    <li class="mb-2">
+                        <a class="text-light" href="#">Who is more Hot Black Widow or Wanda maximoff</a><br>
+                        <div id="taglist_box" class="taglist row justify-content-start p-2 m-0 mb-3">
+                            <p class="tag m-2" style="cursor: pointer;">BlackWidow<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                            <p class="tag m-2" style="cursor: pointer;">WnadaMaximoff<i
+                                    class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
+                        </div>
+                    </li>
+                    </0l>
             </div>
         </div>
     </div>
 
     <script>
-        function remove_tag() {
+        var tags_list = '';
+
+        function remove_tag(obj) {
+            var data = $('#' + obj.id);
+            tags_list = tags_list.replace((data.text() + ','), '');
+            $('#tags_list').val(tags_list);
+            data.remove();
+
+            if (tags_list === ''){
+                $('#taglist_box').addClass('d-none');
+            }
 
         }
 
-        $('#tag_inp').keypress(function (e) {
-            e.preventDefault();
+        
+        $('#tag_inp').on('keypress', function (e) {
             if (e.key === 'Enter') {
+                e.preventDefault();
                 var tag_inp = $('#tag_inp');
 
                 var remove_tag_icon = $('<i/>', {
                     class: 'fa-solid fa-circle-xmark mt-1 ms-2'
                 });
 
-                var tag = $('<a/>', {
+                var tag = $('<p/>', {
                     class: 'tag m-1',
                     text: tag_inp.val(),
-                    onclick: remove_tag(),
+                    onclick: 'remove_tag(this)',
                 });
 
+                tag.attr('id', tag_inp.val());
+
+                tags_list += (tag_inp.val() + ',');
+                $('#tags_list').val(tags_list);
+
+                tag.css('cursor', 'pointer');
                 tag.append(remove_tag_icon);
-                
 
                 $('#taglist_box').append(tag);
                 $('#taglist_box').removeClass('d-none');
+
+                tag_inp.val('');
+                return false;
             }
         });
-
     </script>
 
 </body>
