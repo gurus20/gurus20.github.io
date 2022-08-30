@@ -57,23 +57,43 @@
             <div class="col-12 col-md-6 p-md-5 p-2">
                 <p class="display-6 fw-bold pb-3 c-dark">Paste your Link & Add Tag, Thats all</p>
 
-                <form id="create_bookmark_form" action="" class="form-float">
+                <form id="create_bookmark_form" action="" class="form-float" data-remote=true>
                     <div class="float-wrap">
                         <!-- this input for links -->
                         <input type="url" id="link" name="link" required>
                         <label>&nbsp;Enter your Link or Url&nbsp;</label>
                     </div>
 
-                    <div class="float-wrap">
-                        <!-- this input only for UI handling -->
-                        <input type="text" list="tag_inp" name="tag_inp" id="tag_inp" name="tag_inp" required
-                            class="mb-3">
-                        <datalist id="tag_inp">
-                            <option value="Django"></option>
-                            <option value="Python"></option>
-                            <option value="Ruby"></option>
-                        </datalist>
+
+                    <div class="float-wrap float-dropdown">
+                        <input type="text" name="tag_inp" id="tag_inp" name="tag_inp" required class="mb-3">
                         <label>&nbsp;Enter Tag&nbsp;</label>
+                        <div class="dropdown-input d-none" id="tag-dropdown">
+                            <!-- this input only for UI handling -->
+                            <ol id="tags_list_ul" class="nav flex-column p-3 px-4">
+                                <li class="nav-item">
+                                    <p class="nav-link p-0 c-green" id="djnago" onclick="select_tag(this)">djnago</p>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="nav-link p-0 c-green" id="python" onclick="select_tag(this)">python</p>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="nav-link p-0 c-green" id="ruby" onclick="select_tag(this)">ruby</p>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="nav-link p-0 c-green" id="react" onclick="select_tag(this)">react</p>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="nav-link p-0 c-green" id="node" onclick="select_tag(this)">node</p>
+                                </li>
+                                <li class="nav-item">
+                                    <p class="nav-link p-0 c-green" id="javascript" onclick="select_tag(this)">
+                                        javascript</p>
+                                </li>
+
+                            </ol>
+
+                        </div>
                     </div>
 
                     <!-- this input for tags_list -->
@@ -88,7 +108,7 @@
                 </form>
             </div>
             <div class="col-12 col-md-6 p-md-5 p-2 b-dark">
-                <p class="h3 fw-bold pb-3 fst-italic bor-bottom mb-4">My Marks</p>
+                <!-- <p class="h3 fw-bold pb-3 fst-italic bor-bottom mb-4">My Marks</p>
 
                 <ol>
                     <li class="mb-3">
@@ -120,13 +140,19 @@
                                     class="fa-solid fa-circle-xmark mt-1 ms-2"></i></p>
                         </div>
                     </li>
-                    </0l>
+                    </0l> -->
             </div>
         </div>
     </div>
 
     <script>
         var tags_list = '';
+        var selected_tag = 'none';
+
+        function select_tag(obj) {
+            var p = $('#' + obj.id);
+            selected_tag = p.text();
+        }
 
         function remove_tag(obj) {
             var data = $('#' + obj.id);
@@ -134,18 +160,52 @@
             $('#tags_list').val(tags_list);
             data.remove();
 
-            if (tags_list === ''){
+            if (tags_list === '') {
                 $('#taglist_box').addClass('d-none');
             }
-
         }
 
-        
-        $('#tag_inp').on('keypress', function (e) {
+        function dropdown_search() {
+            var tag_input, filter, tags_list_li, p, txtValue;
+
+            tag_input = $('#tag_inp');
+            filter = tag_input.val().toLowerCase();
+            tags_list_li = $('#tags_list_ul li');
+
+            for (var i = 0; i < tags_list_li.length; i++) {
+                p = $(tags_list_li[i]).find('p')[0];
+
+                txtValue = p.textContent || p.innerText;
+
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    $(tags_list_li[i]).removeClass('d-none');
+                }
+                else {
+                    $(tags_list_li[i]).addClass('d-none');
+                }
+            }
+        }
+
+        $('#tag_inp').focusin(function () {
+            $('#tag-dropdown').removeClass('d-none');
+        });
+
+        $('#tag_inp').focusout(function () {
+            $('#tag-dropdown').addClass('d-none');
+        });
+
+        $('#tag_inp').on('input', function (e) {
+            e.preventDefault();
+            dropdown_search();
+            $('#tag-dropdown').removeClass('d-none');
+            var tag_inp = $('#tag_inp');
+
+            if (selected_tag != 'none'){
+                tag_inp = select_tag;
+            }
+
             if (e.key === 'Enter') {
                 e.preventDefault();
-                var tag_inp = $('#tag_inp');
-
                 var remove_tag_icon = $('<i/>', {
                     class: 'fa-solid fa-circle-xmark mt-1 ms-2'
                 });
@@ -170,6 +230,7 @@
                 tag_inp.val('');
                 return false;
             }
+
         });
     </script>
 
