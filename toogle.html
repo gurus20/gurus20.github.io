@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #toggle {
+            position: absolute;
+            height: 20px;
+            width: 40px;
+            background-color: #d2d2d2;
+            top: 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.5s;
+            padding: 3px;
+        }
+
+        #toggle .indicator {
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            top: 5px;
+            left: 5px;
+            background-color: #3d3d3d;
+            border-radius: 50%;
+            transition: all 0.5s
+        }
+
+        #toggle .change {
+            left: 24px;
+            background-color: #ffffff
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="toggle"> 
+        <span class="indicator"></span> 
+    </div>
+</body>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+            const toggle = document.getElementById('toggle');
+            const indicator = document.querySelector('.indicator');
+            toggle.onclick = function () {
+                indicator.classList.toggle('change');
+                toggle.classList.toggle('active');
+            }
+        });
+</script>
+</html>
